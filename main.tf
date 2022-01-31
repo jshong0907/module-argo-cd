@@ -26,10 +26,10 @@ resource "kubernetes_namespace" "argo-ns" {
   }
 }
 
-# resource "helm_release" "argocd" {
-#   name       = "argocd"
-#   chart      = "argo-cd"
-#   repository = "https://argoproj.github.io/argo-helm"
-#   namespace  = "argocd"
-#   version    = "3.32.1"
-# }
+resource "helm_release" "argocd" {
+  name       = "argocd"
+  chart      = "argo"
+  repository = "https://argoproj.github.io/argo-helm"
+  namespace  = "argocd"
+  version    = "3.32.1"
+}
